@@ -6,7 +6,7 @@ import { ArrowLeft, Plus, Check, Search, X } from 'lucide-react'
 import { useCart } from '@/contexts/CartContext'
 import { menuData } from '@/lib/menuData'
 import ExtrasModal from './ExtrasModal'
-import { hasExtras, ExtraItem } from '@/lib/itemExtras'
+import { hasExtras, ExtraItem } from '@/lib/extras'
 
 export default function MenuSection() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)

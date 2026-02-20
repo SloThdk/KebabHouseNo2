@@ -8,8 +8,8 @@ import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft, Pencil, CreditCard, Smartp
 import { menuData } from '@/lib/menuData'
 import ExtrasModal from '@/components/ExtrasModal'
 import Footer from '@/components/Footer'
-import { hasExtras } from '@/lib/itemExtras'
-import type { ExtraItem } from '@/lib/itemExtras'
+import { hasExtras } from '@/lib/extras'
+import type { ExtraItem } from '@/lib/extras'
 
 const categoryImageMap = menuData.categoryImages as Record<string, string>
 const SUNU_ORDER_URL = 'https://pizzakebabhouse.dk/?module=Sunu&page=site&do=order_basket&user_id=343'

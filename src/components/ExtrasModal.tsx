@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { MenuItem } from '@/types/menu';
-import { ExtraItem, ItemExtrasData, getItemExtras } from '@/lib/itemExtras';
+import { ExtraItem, ItemExtrasData, getItemExtras } from '@/lib/extras';
 
 interface ExtrasModalProps {
   isOpen: boolean;
