@@ -88,12 +88,12 @@ export default function Navigation() {
               <Image
                 src="/logo.png"
                 alt="Kebab House no.2"
-                width={52}
-                height={52}
+                width={68}
+                height={68}
                 className="rounded-md"
               />
               <div className="hidden sm:block">
-                <p className="text-white font-bold text-base leading-tight">Kebab House no.2</p>
+                <p className="text-white font-bold text-lg leading-tight">Kebab House no.2</p>
                 <p className="text-amber-500/70 text-xs">Nørre Nebel</p>
               </div>
               <div className="hidden md:flex items-center gap-2 ml-4">
