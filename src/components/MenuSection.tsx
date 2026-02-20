@@ -1,37 +1,30 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
-import { ChevronDown, ChevronUp, Plus, Check } from 'lucide-react'
+import { ArrowLeft, Plus, Check, Search, X } from 'lucide-react'
 import { useCart } from '@/contexts/CartContext'
 import { menuData } from '@/lib/menuData'
 import ExtrasModal from './ExtrasModal'
-import { hasExtras, getItemExtras, ExtraItem } from '@/lib/itemExtras'
+import { hasExtras, ExtraItem } from '@/lib/itemExtras'
 
 export default function MenuSection() {
-  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set())
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [addedItems, setAddedItems] = useState<Set<string>>(new Set())
   const [extrasModalItem, setExtrasModalItem] = useState<{item: any, category: string, priceIndex: number} | null>(null)
   const { addItem } = useCart()
 
-  const toggleCategory = (category: string) => {
-    setExpandedCategories(prev => {
-      const newSet = new Set(prev)
-      if (newSet.has(category)) {
-        newSet.delete(category)
-      } else {
-        newSet.add(category)
-      }
-      return newSet
-    })
-  }
+  const normalize = (s: string) =>
+    s.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/ø/g, 'o').replace(/å/g, 'a').replace(/æ/g, 'ae')
+      .replace(/ü/g, 'u').replace(/ö/g, 'o').replace(/ä/g, 'a')
+      .replace(/½/g, '1/2')
 
   const handleAddToCart = (category: string, item: any, priceIndex: number = 0) => {
     const varenr = (item as any).varenr || ''
-    const itemHasExtras = hasExtras(varenr)
-    console.log('[MenuSection] handleAddToCart', item.name, 'varenr:', varenr, 'hasExtras:', itemHasExtras)
-    if (itemHasExtras) {
+    if (hasExtras(varenr)) {
       setExtrasModalItem({ item, category, priceIndex })
       return
     }
@@ -50,10 +43,10 @@ export default function MenuSection() {
         name: item.name,
         price: price + extrasTotal,
         priceLabel: priceText,
-        category: category,
+        category,
         varenr: (item as any).varenr || '',
-        extras: extras,
-        removedIncluded: removedIncluded,
+        extras,
+        removedIncluded,
       })
       setAddedItems(prev => new Set(prev).add(`${category}-${item.name}-${priceIndex}`))
       setTimeout(() => {
@@ -79,135 +72,189 @@ export default function MenuSection() {
     }
   }
 
-  // Normalize: strip accents + common Danish substitutions so "pitabrod" finds "PITABRØD"
-  const normalize = (s: string) =>
-    s.toLowerCase()
-      .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // strip combining accents
-      .replace(/ø/g, 'o').replace(/å/g, 'a').replace(/æ/g, 'ae')
-      .replace(/ü/g, 'u').replace(/ö/g, 'o').replace(/ä/g, 'a')
-      .replace(/½/g, '1/2')
-
   const categories = Object.keys(menuData.menu)
-  const filteredCategories = searchQuery
-    ? categories.filter(cat =>
-        normalize(cat).includes(normalize(searchQuery)) ||
-        menuData.menu[cat as keyof typeof menuData.menu].some(item =>
-          normalize(item.name).includes(normalize(searchQuery)) ||
-          normalize(item.desc).includes(normalize(searchQuery))
-        )
+
+  // Search mode: show matching items across all categories
+  const isSearching = searchQuery.length > 0
+  const searchResults = isSearching
+    ? categories.flatMap(cat =>
+        menuData.menu[cat as keyof typeof menuData.menu]
+          .filter(item =>
+            normalize(item.name).includes(normalize(searchQuery)) ||
+            normalize(item.desc).includes(normalize(searchQuery)) ||
+            normalize(cat).includes(normalize(searchQuery))
+          )
+          .map(item => ({ item, category: cat }))
       )
-    : categories
+    : []
+
+  // Category detail view
+  const categoryItems = selectedCategory
+    ? menuData.menu[selectedCategory as keyof typeof menuData.menu]
+    : []
+  const categoryImage = selectedCategory
+    ? menuData.categoryImages[selectedCategory as keyof typeof menuData.categoryImages]
+    : null
 
   return (
     <section id="menu" className="py-16 bg-stone-950">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+
+        {/* Header */}
+        <div className="text-center mb-10">
           <h2 className="text-4xl font-bold text-white mb-4">Vores Menu</h2>
           <p className="text-stone-400 mb-8">Autentisk mad med de bedste råvarer</p>
-
-          <div className="max-w-md mx-auto">
+          <div className="max-w-md mx-auto relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" size={18} />
             <input
               type="text"
               placeholder="Søg i menuen..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg bg-stone-800 text-white placeholder-stone-400 border border-stone-700 focus:border-amber-500 focus:outline-none transition"
+              onChange={(e) => { setSearchQuery(e.target.value); setSelectedCategory(null) }}
+              className="w-full pl-11 pr-10 py-3 rounded-xl bg-stone-800 text-white placeholder-stone-400 border border-stone-700 focus:border-amber-500 focus:outline-none transition"
             />
+            {searchQuery && (
+              <button onClick={() => setSearchQuery('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-400 hover:text-white">
+                <X size={18} />
+              </button>
+            )}
           </div>
         </div>
 
-        <div className="space-y-4">
-          {filteredCategories.map((category) => {
-            const items = menuData.menu[category as keyof typeof menuData.menu]
-            const isExpanded = expandedCategories.has(category)
-            const categoryImage = menuData.categoryImages[category as keyof typeof menuData.categoryImages]
-
-            const filteredItems = searchQuery
-              ? items.filter(item =>
-                  normalize(item.name).includes(normalize(searchQuery)) ||
-                  normalize(item.desc).includes(normalize(searchQuery))
-                )
-              : items
-
-            if (searchQuery && filteredItems.length === 0) return null
-
-            return (
-              <div key={category} className="bg-stone-800 rounded-xl overflow-hidden shadow-lg">
-                <button
-                  onClick={() => toggleCategory(category)}
-                  className="w-full px-3 sm:px-6 py-3 sm:py-4 flex items-center justify-between hover:bg-stone-700 transition cursor-pointer"
-                >
-                  <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                    {categoryImage && (
-                      <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-lg overflow-hidden shrink-0">
-                        <Image
-                          src={`/images/${categoryImage}`}
-                          alt={category}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    )}
-                    <div className="text-left min-w-0">
-                      <h3 className="text-base sm:text-xl font-semibold text-amber-500 leading-tight">{category}</h3>
-                      <p className="text-sm text-stone-400">{filteredItems.length} retter</p>
+        {/* SEARCH RESULTS */}
+        {isSearching && (
+          <div className="space-y-3">
+            {searchResults.length === 0 ? (
+              <p className="text-center text-stone-400 py-12">Ingen resultater for &ldquo;{searchQuery}&rdquo;</p>
+            ) : (
+              searchResults.map(({ item, category }, index) => (
+                <div key={`${category}-${item.name}-${index}`} className="bg-stone-800 rounded-xl p-4 border border-stone-700">
+                  <p className="text-xs text-amber-500/70 font-medium mb-1 uppercase tracking-wide">{category}</p>
+                  <div className="flex justify-between items-start gap-2">
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-base font-semibold text-white">{item.name}</h4>
+                      {item.desc && <p className="text-stone-400 text-sm mt-1">{item.desc}</p>}
                     </div>
-                  </div>
-                  {isExpanded ? (
-                    <ChevronUp className="text-amber-500" size={24} />
-                  ) : (
-                    <ChevronDown className="text-amber-500" size={24} />
-                  )}
-                </button>
-
-                {isExpanded && (
-                  <div className="px-2 sm:px-6 pb-4">
-                    <div className="grid gap-3 mt-4">
-                      {filteredItems.map((item, index) => (
-                        <div
-                          key={`${category}-${item.name}-${index}`}
-                          className="bg-stone-700 rounded-lg p-3 sm:p-4 hover:bg-stone-600 transition cursor-pointer"
-                        >
-                          <div className="flex justify-between items-start gap-2 mb-2">
-                            <div className="min-w-0 flex-1">
-                              <h4 className="text-sm sm:text-base font-semibold text-white leading-tight">{item.name}</h4>
-                              {(item as any).varenr && (
-                                <span className="text-xs text-stone-500">{(item as any).varenr}</span>
-                              )}
-                            </div>
-                            <div className="flex flex-col items-end gap-1.5 shrink-0 max-w-[45%]">
-                              {item.prices.map((price, priceIndex) => (
-                                <div key={priceIndex} className="flex items-center gap-1.5 w-full justify-end">
-                                  <span className="text-amber-500 font-bold text-xs sm:text-sm whitespace-nowrap">{price}</span>
-                                  <button
-                                    onClick={() => handleAddToCart(category, item, priceIndex)}
-                                    className={`${addedItems.has(`${category}-${item.name}-${priceIndex}`) ? 'bg-green-500 scale-125' : 'bg-amber-500 hover:bg-amber-600 hover:scale-110'} text-stone-900 p-1.5 sm:p-2 rounded-full transition-all duration-300 cursor-pointer shrink-0`}
-                                    aria-label={`Tilføj ${item.name} til kurv`}
-                                  >
-                                    {addedItems.has(`${category}-${item.name}-${priceIndex}`) ? <Check size={16} /> : <Plus size={16} />}
-                                  </button>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                          {item.desc && (
-                            <p className="text-stone-400 text-sm leading-relaxed">{item.desc}</p>
-                          )}
+                    <div className="flex flex-col items-end gap-1.5 shrink-0">
+                      {item.prices.map((price, priceIndex) => (
+                        <div key={priceIndex} className="flex items-center gap-2">
+                          <span className="text-amber-500 font-bold text-sm whitespace-nowrap">{price}</span>
+                          <button
+                            onClick={() => handleAddToCart(category, item, priceIndex)}
+                            className={`${addedItems.has(`${category}-${item.name}-${priceIndex}`) ? 'bg-green-500 scale-125' : 'bg-amber-500 hover:bg-amber-600 hover:scale-110'} text-stone-900 p-1.5 rounded-full transition-all duration-300`}
+                          >
+                            {addedItems.has(`${category}-${item.name}-${priceIndex}`) ? <Check size={15} /> : <Plus size={15} />}
+                          </button>
                         </div>
                       ))}
                     </div>
                   </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
-
-        {filteredCategories.length === 0 && searchQuery && (
-          <div className="text-center py-12">
-            <p className="text-stone-400">Ingen resultater fundet for "{searchQuery}"</p>
+                </div>
+              ))
+            )}
           </div>
         )}
+
+        {/* CATEGORY GRID */}
+        {!isSearching && !selectedCategory && (
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+            {categories.map((category) => {
+              const items = menuData.menu[category as keyof typeof menuData.menu]
+              const img = menuData.categoryImages[category as keyof typeof menuData.categoryImages]
+              return (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-stone-800 shadow-lg hover:shadow-amber-500/10 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer text-left border border-stone-700/50 hover:border-amber-500/40"
+                >
+                  {img ? (
+                    <Image
+                      src={`/images/${img}`}
+                      alt={category}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-stone-700 to-stone-800" />
+                  )}
+                  {/* dark gradient overlay for text legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
+                    <h3 className="text-white font-bold text-sm sm:text-base leading-tight line-clamp-2">{category}</h3>
+                    <p className="text-amber-400 text-xs sm:text-sm mt-0.5 font-medium">{items.length} retter</p>
+                  </div>
+                </button>
+              )
+            })}
+          </div>
+        )}
+
+        {/* CATEGORY DETAIL VIEW */}
+        {!isSearching && selectedCategory && (
+          <div>
+            {/* Back button + banner */}
+            <div className="mb-6">
+              <button
+                onClick={() => setSelectedCategory(null)}
+                className="flex items-center gap-2 text-amber-500 hover:text-amber-400 transition mb-4 group"
+              >
+                <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+                <span className="font-medium">Alle kategorier</span>
+              </button>
+
+              {/* Category banner */}
+              <div className="relative h-36 sm:h-48 rounded-2xl overflow-hidden">
+                {categoryImage ? (
+                  <Image src={`/images/${categoryImage}`} alt={selectedCategory} fill className="object-cover" />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-r from-stone-800 to-stone-700" />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/20" />
+                <div className="absolute bottom-0 left-0 p-5 sm:p-8">
+                  <h3 className="text-2xl sm:text-4xl font-bold text-white leading-tight">{selectedCategory}</h3>
+                  <p className="text-amber-400 font-medium mt-1">{categoryItems.length} retter</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Items */}
+            <div className="space-y-3">
+              {categoryItems.map((item, index) => (
+                <div
+                  key={`${selectedCategory}-${item.name}-${index}`}
+                  className="bg-stone-800 rounded-xl p-4 sm:p-5 border border-stone-700/50 hover:border-stone-600 transition"
+                >
+                  <div className="flex justify-between items-start gap-3">
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-base sm:text-lg font-semibold text-white leading-tight">{item.name}</h4>
+                      {(item as any).varenr && (
+                        <span className="text-xs text-stone-500 mt-0.5 block">#{(item as any).varenr}</span>
+                      )}
+                      {item.desc && (
+                        <p className="text-stone-400 text-sm mt-2 leading-relaxed">{item.desc}</p>
+                      )}
+                    </div>
+                    <div className="flex flex-col items-end gap-2 shrink-0">
+                      {item.prices.map((price, priceIndex) => (
+                        <div key={priceIndex} className="flex items-center gap-2">
+                          <span className="text-amber-500 font-bold text-sm sm:text-base whitespace-nowrap">{price}</span>
+                          <button
+                            onClick={() => handleAddToCart(selectedCategory, item, priceIndex)}
+                            className={`${addedItems.has(`${selectedCategory}-${item.name}-${priceIndex}`) ? 'bg-green-500 scale-125' : 'bg-amber-500 hover:bg-amber-600 hover:scale-110'} text-stone-900 p-2 rounded-full transition-all duration-300 cursor-pointer`}
+                            aria-label={`Tilføj ${item.name} til kurv`}
+                          >
+                            {addedItems.has(`${selectedCategory}-${item.name}-${priceIndex}`) ? <Check size={16} /> : <Plus size={16} />}
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
 
       {extrasModalItem && (
