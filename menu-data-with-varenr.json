@@ -1,0 +1,1379 @@
+{
+  "business": {
+    "name": "Kebab House no.2 ApS",
+    "address": "Bredgade 59, 6830 Nørre Nebel",
+    "phone": "75287535",
+    "email": "kebab.houseno2@gmail.com",
+    "cvr": "45064433",
+    "hours": "Man-Søn 12:00-21:00",
+    "pickup": true,
+    "delivery": false,
+    "reviews": 1732,
+    "appStore": "https://itunes.apple.com/dk/app/id1178167723",
+    "googlePlay": "https://play.google.com/store/apps/details?id=dk.stadel.kebabhouse_no_2",
+    "smiley": "http://www.findsmiley.dk/da-DK/Searching/DetailsView.htm?virk=1463168",
+    "mapUrl": "https://www.google.dk/maps/place/Bredgade+59%2C+N%C3%B8rre+Nebel"
+  },
+  "categoryImages": {
+    "FROKOSTRETTER": "group_2410.jpg",
+    "PIZZA 80kr": "group_1802.jpg",
+    "PIZZA 85kr": "group_1801.jpg",
+    "PIZZA 95kr": "group_1800.jpg",
+    "BØRNE RETTER": "group_1799.jpg",
+    "INDBAGT PIZZA 90 KR.": "group_1797.jpg",
+    "MEXICANSK PIZZA 95kr": "group_1798.jpg",
+    "SALATPIZZA 90 KR.": "group_1795.jpg",
+    "POMMES FRITES PIZZA": "group_5788.jpg",
+    "LUXUS PIZZA": "group_5787.jpg",
+    "UFO 110 kr.": "group_2411.jpg",
+    "SANDWICH": "group_1782.jpg",
+    "DÜRÜM (fladbrød)": "group_1789.jpg",
+    "PITABRØD": "group_1790.jpg",
+    "PASTARETTER": "group_1788.jpg",
+    "GRILRETTER": "group_1786.jpg",
+    "FORRETTER": "group_1792.jpg",
+    "HOVEDRETTER": "group_1791.jpg",
+    "HJEMMELAVEDE BURGER": "group_1784.jpg",
+    "SALAT": "group_1787.jpg",
+    "POMMES FRITES": "group_1785.jpg",
+    "DRIKKEVARER": "group_1783.jpg"
+  },
+  "menu": {
+    "FROKOSTRETTER": [
+      {
+        "name": "3 SLAGS HJEMMELAVET SANDWICH",
+        "desc": "Med ost og salat, dressing, agurk, tomat. Vælg mellem skinke/kebab/kylling",
+        "prices": [
+          "Alm. 65,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "AL TONNO",
+        "desc": "Pizzasauce, ost, tun, løg",
+        "prices": [
+          "Alm. 65,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "AMERIKANER",
+        "desc": "Pizzasauce, ost, oksekød, champignon",
+        "prices": [
+          "Alm. 65,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "CAPRICCIOSA",
+        "desc": "Pizzasauce, ost, skinke, champignon",
+        "prices": [
+          "Alm. 65,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "DURUM",
+        "desc": "Kebab/kylling/skinke/tun/rejer m. salat agurk, tomat og dressing",
+        "prices": [
+          "Alm. 65,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "DUVBO",
+        "desc": "Pizzasauce, ost, bacon, løg",
+        "prices": [
+          "Alm. 65,00 kr."
+        ],
+        "varenr": "F7"
+      },
+      {
+        "name": "FISKEFILET",
+        "desc": "1 stk med pommes frites, salat, dressing, ketchup, remoulade",
+        "prices": [
+          "Alm. 65,00 kr."
+        ],
+        "varenr": "F13"
+      },
+      {
+        "name": "GRÆSK SALAT",
+        "desc": "Iceberg, tomater, agurk, oliven, ostetern, Dressing med brød",
+        "prices": [
+          "Alm. 70,00 kr."
+        ],
+        "varenr": "F10"
+      },
+      {
+        "name": "HAWAII",
+        "desc": "Pizzasauce, ost, skinke, ananas",
+        "prices": [
+          "Alm. 65,00 kr."
+        ],
+        "varenr": "F4"
+      },
+      {
+        "name": "LUXUX SALAT",
+        "desc": "Iceberg, ananas, tun, rejer, tomater, agurk, dressing med brød",
+        "prices": [
+          "Alm. 70,00 kr."
+        ],
+        "varenr": "F9"
+      },
+      {
+        "name": "MARGHERITA",
+        "desc": "Pizzasauce, ost",
+        "prices": [
+          "Alm. 65,00 kr."
+        ],
+        "varenr": "F8"
+      },
+      {
+        "name": "MIX",
+        "desc": "Vælg mellem kebab/kylling med pommes frites, dressing",
+        "prices": [
+          "Alm. 75,00 kr."
+        ],
+        "varenr": "F17"
+      },
+      {
+        "name": "NACHOS",
+        "desc": "Sprøde ovngratinerede tortillachips med ost, salsa og guacamole",
+        "prices": [
+          "Alm. 65,00 kr."
+        ],
+        "varenr": "F11"
+      },
+      {
+        "name": "NACHOS SUPREMA",
+        "desc": "Sprøde, ovngratinerede tortillachips med mexicansk, kylling eller kebab, ost, salsa og guacamole",
+        "prices": [
+          "Alm. 75,00 kr."
+        ],
+        "varenr": "F12"
+      },
+      {
+        "name": "PEPPERONI",
+        "desc": "Pizzasauce, ost, pepperoni",
+        "prices": [
+          "Alm. 65,00 kr."
+        ],
+        "varenr": "F5"
+      },
+      {
+        "name": "VESUVIO",
+        "desc": "Pizzasauce, ost, skinke",
+        "prices": [
+          "Alm. 65,00 kr."
+        ],
+        "varenr": "F1"
+      }
+    ],
+    "PIZZA 80kr": [
+      {
+        "name": "VESUVIO",
+        "desc": "Ost, Skinke",
+        "prices": [
+          "Alm 80,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "CAPRICCIOSA",
+        "desc": "Ost, Skinke, Champigon",
+        "prices": [
+          "Alm 80,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "AL TONNO",
+        "desc": "Ost, Tun, Løg",
+        "prices": [
+          "Alm 80,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "HAWAI",
+        "desc": "Ost, Skinke, Ananas",
+        "prices": [
+          "Alm 80,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "Pepperoni",
+        "desc": "Ost, Pepperoni",
+        "prices": [
+          "Alm 80,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "AMERIKANER",
+        "desc": "Ost, Oksekød, Champigon",
+        "prices": [
+          "Alm 80,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F7"
+      },
+      {
+        "name": "DUVBO",
+        "desc": "Ost, Bacon, Løg",
+        "prices": [
+          "Alm 80,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F13"
+      },
+      {
+        "name": "MARGHERITA",
+        "desc": "Ost",
+        "prices": [
+          "Alm 80,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F10"
+      }
+    ],
+    "PIZZA 85kr": [
+      {
+        "name": "STINE",
+        "desc": "Ost, Bacon, Oksekød, Rød peber",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "CALIFORNIA",
+        "desc": "Ost, Skinke, Oksekød, Ananas",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "ITALIANO",
+        "desc": "Skinke, Løg, Kebab",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "DILAN",
+        "desc": "Ost, Kødsauce, Spaghetti, Rød peber",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "TORINO",
+        "desc": "Ost, Tun, Rejer",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "VEGETARIANA",
+        "desc": "Ost, Champigon, Løg, Ananas, Rød peber, Oliven",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F7"
+      },
+      {
+        "name": "GORGONZOLA",
+        "desc": "Ost, Gorgonzola, Oksekød, Rød peber",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F13"
+      },
+      {
+        "name": "ALIBABA",
+        "desc": "Ost, Skinke, Cocktail pølser",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 185,00 kr."
+        ],
+        "varenr": "F10"
+      },
+      {
+        "name": "MAMA MIA",
+        "desc": "Ost, Oksekød, Pepperoni, Cocktail pølser, Chili",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 190,00 kr."
+        ],
+        "varenr": "F4"
+      },
+      {
+        "name": "LAMIRAGE",
+        "desc": "Ost, Skinke, Champigon, Cocktail pølser, Pepperoni",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 190,00 kr."
+        ],
+        "varenr": "F9"
+      },
+      {
+        "name": "MILANO",
+        "desc": "Ost, Oksekød, Bacon, Løg, Kebab",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 190,00 kr."
+        ],
+        "varenr": "F8"
+      },
+      {
+        "name": "HERKULES",
+        "desc": "Ost, Skinke, Oksekød, Løg, Bearnaisesauce",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 190,00 kr."
+        ],
+        "varenr": "F17"
+      },
+      {
+        "name": "ROMA",
+        "desc": "Ost, Kødsauce, Champigon, Rød peber, Cocktail pølser",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 190,00 kr."
+        ],
+        "varenr": "F11"
+      },
+      {
+        "name": "SERKAN SPECIAL",
+        "desc": "Ost, Kebab, Løg, Dressing, Chili",
+        "prices": [
+          "Alm 85,00 kr.",
+          "Familie 40x40 190,00 kr."
+        ],
+        "varenr": "F12"
+      }
+    ],
+    "PIZZA 95kr": [
+      {
+        "name": "QUATRO STRIGONI",
+        "desc": "Pizzasauce Ost, Skinke, Rejer, Champignon, Muslinger",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 190,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "NR. NEBEL SPECIAL",
+        "desc": "Pizzasauce Ost, Oksekød, Bacon, Salami, Rød peber, Ananas, Chili, Champignon",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 190,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "LAZIO SPECIAL",
+        "desc": "Pizzasauce Ost, Skinke, Cocktail pølser, Ananas, Pepperoni",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "HUSETS SPECIAL",
+        "desc": "Pizzasauce Ost, Oksekød, Kylling, Cocktail pølser, Bearnaisesauce",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "ADEMS SPECIAL",
+        "desc": "Pizzasauce Ost, Kebab, Løg, Gorgonzola, Rød peber",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "Meat Love",
+        "desc": "Pizzasauce Kebab, Pepperoni, Cocktail pølser, Bacon, Oksekød, Ost",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F7"
+      },
+      {
+        "name": "CANIM",
+        "desc": "Pizzasauce Ost, Æg, Champignon, Oksekød, Bacon",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F13"
+      },
+      {
+        "name": "EYIP SPECIAL",
+        "desc": "Pizzasauce Ost, Oksekød, Kødsauce, Skinke, Kebab, Chili, hvidløg",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F10"
+      },
+      {
+        "name": "HASRET KALDIM",
+        "desc": "Pizzasauce Ost, Oksekød, Skinke, Bacon, Pepperoni, Chili, Løg",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F4"
+      },
+      {
+        "name": "KARTOFFEL",
+        "desc": "Ost, kartoffel, creme fraiche, pesto, rosmarin",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F9"
+      },
+      {
+        "name": "GÜLUM",
+        "desc": "Pizzasauce Ost, Kebab, Kødsauce, Rød peber, Løg, Kylling, Chili",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F8"
+      },
+      {
+        "name": "Æ FORMANDS BØRN",
+        "desc": "Pizzasauce Ost, Cocktail pølser, Kebab, Bacon, Chili",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F17"
+      }
+    ],
+    "BØRNE RETTER": [
+      {
+        "name": "TOMMY",
+        "desc": "Pizzasauce Ost, Skinke",
+        "prices": [
+          "Alm 69,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "CERVY",
+        "desc": "Pizzasauce Ost, Skinke, Cocktail pølser",
+        "prices": [
+          "Alm 69,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "YASIN",
+        "desc": "Pizzasauce Ost, Kødsauce",
+        "prices": [
+          "Alm 69,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "SALAMI",
+        "desc": "Pizzasauce Ost, Salami",
+        "prices": [
+          "Alm 69,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "MAMI",
+        "desc": "Pizzasauce Kødsauce, Spaghetti, Ost",
+        "prices": [
+          "Alm 69,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "DINO MENU",
+        "desc": "2 stk. kalkun dinosaurus serveret m/pommes frites",
+        "prices": [
+          "Alm 75,00 kr."
+        ],
+        "varenr": "F7"
+      },
+      {
+        "name": "DINO BURGER",
+        "desc": "Burger m/kalkun dinosauce m/pommes frites",
+        "prices": [
+          "Alm 75,00 kr."
+        ],
+        "varenr": "F13"
+      }
+    ],
+    "INDBAGT PIZZA 90 KR.": [
+      {
+        "name": "RHODOS",
+        "desc": "Pizzasauce Ost, Skinke, Spaghetti, Kødsauce",
+        "prices": [
+          "Alm 90,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "CALZONE",
+        "desc": "Pizzasauce Ost, Skinke, Champignon, Cocktail pølser",
+        "prices": [
+          "Alm 90,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "MARANTO",
+        "desc": "Pizzasauce Ost, Spaghetti, Kødsauce",
+        "prices": [
+          "Alm 90,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "SAMOS",
+        "desc": "Pizzasauce Ost, Skinke, Løg, Kebab, Champignon",
+        "prices": [
+          "Alm 90,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "INDBAGT",
+        "desc": "Pizzasauce Ost, Skinke, Champignon, Rejer, Løg",
+        "prices": [
+          "Alm 90,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "HALV INDBAGT",
+        "desc": "Pizzasauce Ost, Kebab, Løg, Champignon, Dressing, Chili",
+        "prices": [
+          "Alm 90,00 kr."
+        ],
+        "varenr": "F7"
+      },
+      {
+        "name": "HALV INDBAGT",
+        "desc": "Pizzasauce Ost, Skinke, Champignon, Løg, Dressing, Chili",
+        "prices": [
+          "Alm 90,00 kr."
+        ],
+        "varenr": "F13"
+      }
+    ],
+    "MEXICANSK PIZZA 95kr": [
+      {
+        "name": "MEXICANA",
+        "desc": "Pizzasauce Ost, Pepperoni, Oksekød, Løg, Jalapenos",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie40*40 199,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "AZTEKA",
+        "desc": "Pizzasauce Ost, Kebab, Kylling, Rød peber, Jalapenos",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie40*40 199,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "ACAPULCO",
+        "desc": "Pizzasauce Ost, Kebab, Rød peber, Løg, Champignon, Jalapenos",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie40*40 199,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "DENNISO",
+        "desc": "Pizzasauce Ost, Kylling, Oksekød, Kebab, Dressing, Jalapenos",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie40*40 199,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "MATAMOROS",
+        "desc": "Pizzasauce Ost, Champignon, Kylling, Oksekød, bearnaisesauc, Jalapenos",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie40*40 199,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "NEW MEXICO",
+        "desc": "Pizzasauce Ost, Champignon, Pepperoni, Kødsauce, Kylling, Jalapenos",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie40*40 199,00 kr."
+        ],
+        "varenr": "F7"
+      }
+    ],
+    "SALATPIZZA 90 KR.": [
+      {
+        "name": "MORTEN",
+        "desc": "Pizzasauce Ost, Kebab, Oksekød, Salat, Dressing",
+        "prices": [
+          "Alm 90,00 kr.",
+          "Familie40*40 199,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "KURT",
+        "desc": "Pizzasauce Ost, Pepperoni, Bacon, Salat, Dressing",
+        "prices": [
+          "Alm 90,00 kr.",
+          "Familie40*40 199,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "OLGA",
+        "desc": "Pizzasauce Ost, Kebab, Kylling, Salat, Dressing",
+        "prices": [
+          "Alm 90,00 kr.",
+          "Familie40*40 199,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "PETER",
+        "desc": "Pizzasauce Ost, Spaghetti, Kødsauce, Salat, Dressing",
+        "prices": [
+          "Alm 90,00 kr.",
+          "Familie40*40 199,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "MARCO SPECIAL",
+        "desc": "Pizzasauce Lufttørret skinke, Rucola, Ost",
+        "prices": [
+          "Alm 90,00 kr.",
+          "Familie40*40 199,00 kr."
+        ],
+        "varenr": "F15"
+      }
+    ],
+    "POMMES FRITES PIZZA": [
+      {
+        "name": "PommesPizza kebab",
+        "desc": "Pizzasauce Kebab, Ost, Dressing, Pommes frites",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "PommesPizza kylling",
+        "desc": "Pizzasauce Ost, Kylling, Pommes frites, Dressing",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "PommesPizza kylling/kebab",
+        "desc": "Pizzasauce Ost, Kebab, Kylling, bearnaisesauc",
+        "prices": [
+          "Alm 95,00 kr.",
+          "Familie 40x40 199,00 kr."
+        ],
+        "varenr": "F6"
+      }
+    ],
+    "LUXUS PIZZA": [
+      {
+        "name": "Luksus Pizza",
+        "desc": "Pizzasauce Ost, Salami, Rucola, Grana padano",
+        "prices": [
+          "Alm 105,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "Luksus Pizza",
+        "desc": "Pizzasauce Ost, Salami, Bacon, Rucola, Cherrytomater, Grana padano",
+        "prices": [
+          "Alm 105,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "Luksus Pizza",
+        "desc": "Pizzasauce Ost, Lufttørret skinke, Rucola, Cherrytomater, Grana padano",
+        "prices": [
+          "Alm 105,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "Luksus Pizza",
+        "desc": "Pizzasauce Ost, Lufttørret skinke, Champignon, Løg, Rucola, Grana padano",
+        "prices": [
+          "Alm 105,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "Luksus Pizza",
+        "desc": "Pizzasauce Ost, Salami, Cocktail pølser, Champignon, Rød peber, Rucola, Grana padano",
+        "prices": [
+          "Alm 105,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "Luksus Pizza",
+        "desc": "Pizzasauce Ost, Lufttørret skinke, Kylling, Bacon, Rucola, Grana padano",
+        "prices": [
+          "Alm 105,00 kr."
+        ],
+        "varenr": "F7"
+      }
+    ],
+    "UFO 110 kr.": [
+      {
+        "name": "Ufo",
+        "desc": "Pizzasauce Ost, Skinke, Spaghetti, Kødsauce",
+        "prices": [
+          "Alm. 110,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "Ufo",
+        "desc": "Pizzasauce Ost, Kebab, Kødsauce, Løg, bearnaisesauc",
+        "prices": [
+          "Alm. 110,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "Ufo",
+        "desc": "Pizzasauce Ost, Skinke, Kebab, Løg, Champignon",
+        "prices": [
+          "Alm. 110,00 kr."
+        ],
+        "varenr": "F6"
+      }
+    ],
+    "SANDWICH": [
+      {
+        "name": "KYLLINGE OG BACON",
+        "desc": "med salat og dressing",
+        "prices": [
+          "Alm 80,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "SKINKE",
+        "desc": "med salat og dressing",
+        "prices": [
+          "Alm 80,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "KEBAB",
+        "desc": "med salat og dressing",
+        "prices": [
+          "Alm 80,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "HVIDLØGSBRØD",
+        "desc": "",
+        "prices": [
+          "Alm 55,00 kr."
+        ],
+        "varenr": "F2"
+      }
+    ],
+    "DÜRÜM (fladbrød)": [
+      {
+        "name": "DÜRÜM",
+        "desc": "Kebab, Salat, Agurk, Dressing, Tomatskiver",
+        "prices": [
+          "Alm 79,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "DÜRÜM",
+        "desc": "Kylling, Salat, Agurk, Tomatskiver, Dressing",
+        "prices": [
+          "Alm 79,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "DÜRÜM",
+        "desc": "Skinke, Salat, Agurk, Tomatskiver, Dressing",
+        "prices": [
+          "Alm 79,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "DÜRÜM",
+        "desc": "Tun, Salat, Tomatskiver, Dressing, Agurk",
+        "prices": [
+          "Alm 79,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "DÜRÜM",
+        "desc": "Rejer, Salat, Agurk, Tomatskiver, Dressing",
+        "prices": [
+          "Alm 79,00 kr."
+        ],
+        "varenr": "F15"
+      }
+    ],
+    "PITABRØD": [
+      {
+        "name": "PITABRØD",
+        "desc": "Kebab, Salat, Agurk, Tomatskiver, Dressing",
+        "prices": [
+          "Alm 75,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "PITABRØD",
+        "desc": "Kylling, Salat, Agurk, Tomatskiver, Dressing",
+        "prices": [
+          "Alm 75,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "PITABRØD",
+        "desc": "Skinke, Agurk, Tomatskiver, Salat, Dressing",
+        "prices": [
+          "Alm 75,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "PITABRØD",
+        "desc": "Tun, Salat, Agurk, Tomatskiver, Dressing",
+        "prices": [
+          "Alm 75,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "PITABRØD",
+        "desc": "Rejer, Salat, Agurk, Tomatskiver, Dressing",
+        "prices": [
+          "Alm 75,00 kr."
+        ],
+        "varenr": "F15"
+      }
+    ],
+    "PASTARETTER": [
+      {
+        "name": "SPAGHETTI A LA BOLOGNESE",
+        "desc": "Spaghetti med kødsovs",
+        "prices": [
+          "Alm 90,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "SPAGHETTI A LA CARBONARA",
+        "desc": "Spaghetti med æg, bacon, og flødesovs",
+        "prices": [
+          "Alm 105,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "FAGLIATELLE AL SALMONE",
+        "desc": "Spaghetti med laks og flødesovs",
+        "prices": [
+          "Alm 119,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "JOMFRUMUMMERE PASTA",
+        "desc": "Cremet pasta med cherrytomater, jomfruhummer, parmesen og rucola",
+        "prices": [
+          "Alm 129,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "PENNETE AL GORGONZOLA",
+        "desc": "Pasta med gorgonzola i flødesovs",
+        "prices": [
+          "Alm 99,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "PASTA POLIO E FUNGHI",
+        "desc": "Pasta med kylling, champignon og flødesovs",
+        "prices": [
+          "Alm 99,00 kr."
+        ],
+        "varenr": "F7"
+      },
+      {
+        "name": "TORTELLINI A LA GORGONZOLA",
+        "desc": "Kødfyldt pasta med gorgonzolasovs",
+        "prices": [
+          "Alm 99,00 kr."
+        ],
+        "varenr": "F13"
+      },
+      {
+        "name": "LASAGNE AL FORNO",
+        "desc": "Ovnbagt lasagne",
+        "prices": [
+          "Alm 105,00 kr."
+        ],
+        "varenr": "F10"
+      },
+      {
+        "name": "TORTELINE AL FORNO",
+        "desc": "Ovnbagt kødfyldt pasta med tomat, ost og flødesauce",
+        "prices": [
+          "Alm 99,00 kr."
+        ],
+        "varenr": "F4"
+      }
+    ],
+    "GRILRETTER": [
+      {
+        "name": "½ GRILLKYLLING",
+        "desc": "Med pommes frites, remoulade, ketchup, agurksalat",
+        "prices": [
+          "Alm 99,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "KYLLINGENUGGETS",
+        "desc": "6 stk. med pommes frites ketchup, remoulade",
+        "prices": [
+          "Alm 75,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "FISKEFILET (2 STK.)",
+        "desc": "Med pommes frites, ketchup, remoulade, salat og dressing",
+        "prices": [
+          "Alm 110,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "KEBAB SPECIAL",
+        "desc": "Med pommes frites, kebab, dressing, salat",
+        "prices": [
+          "Alm 89,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "SKINKESCHNITZEL(180g)",
+        "desc": "Med pommes frites, bearnaisesauce, salat, dressing",
+        "prices": [
+          "Alm 110,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "KYLLINGEMIX",
+        "desc": "Med pommes frites, salat, dressing",
+        "prices": [
+          "Alm 89,00 kr."
+        ],
+        "varenr": "F7"
+      },
+      {
+        "name": "KOTELET STEAK",
+        "desc": "Saftig marineret svinesteak serveret m. pommes frites, salat og sauce",
+        "prices": [
+          "Alm 140,00 kr."
+        ],
+        "varenr": "F13"
+      },
+      {
+        "name": "KOTELET TALLERKEN",
+        "desc": "Med pebersteak, kyllingkebab og kebab. Serveret med pommes frites, salat og sauce",
+        "prices": [
+          "Alm 145,00 kr."
+        ],
+        "varenr": "F10"
+      },
+      {
+        "name": "GRÆSK BØF",
+        "desc": "med dagens kartoffel, bearnaisesauce, salat, dressing",
+        "prices": [
+          "Alm 129,00 kr."
+        ],
+        "varenr": "F4"
+      },
+      {
+        "name": "HOTWINGS",
+        "desc": "7STK. med sort peper og pommes frites",
+        "prices": [
+          "Alm 85,00 kr."
+        ],
+        "varenr": "F9"
+      },
+      {
+        "name": "NACHO SUPREMA",
+        "desc": "Sprøde ovngratinerede tortillachips med kylling eller kebab, ost salsa og guacamole",
+        "prices": [
+          "Alm 89,00 kr."
+        ],
+        "varenr": "F8"
+      },
+      {
+        "name": "SPARERIBS",
+        "desc": "Med pommes frites, bearnaisesaus, salat, dresing",
+        "prices": [
+          "Alm 155,00 kr."
+        ],
+        "varenr": "F17"
+      },
+      {
+        "name": "PØLSEMIX",
+        "desc": "pommes frites, pølse, karry ketchup, rå løg",
+        "prices": [
+          "Alm 85,00 kr."
+        ],
+        "varenr": "F11"
+      }
+    ],
+    "FORRETTER": [
+      {
+        "name": "COLCONE GAMBERETTI",
+        "desc": "Indbagte rejer",
+        "prices": [
+          "Alm 80,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "SNACK KURV",
+        "desc": "4 x Løgringe 4 x Chili cheese 4 x Mozzorella sticks 4 x Hot wings med Aioli og Chilisauce",
+        "prices": [
+          "Alm 95,00 kr."
+        ],
+        "varenr": "F3"
+      }
+    ],
+    "HOVEDRETTER": [
+      {
+        "name": "GRILLMIX",
+        "desc": "m/ 1stk. kyllingfilet, 1stk. krydderbøf, 1 stk. koteletbøf. + sause + pommes",
+        "prices": [
+          "Alm 230,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "T-BONE ALLA GRIGLIA",
+        "desc": "Grillet T-bone steak med gorgonzolasauce",
+        "prices": [
+          "Alm 235,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "COSTOLETTE DI AGNELLO",
+        "desc": "Grillet lamme kotelet med dressing med champignonsauce",
+        "prices": [
+          "Alm 199,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "KYLLINGFILET",
+        "desc": "med champignon, eller bearnaisesauce",
+        "prices": [
+          "Alm 160,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "GRILLET LAKS",
+        "desc": "med små kartofler, hollandaisesauce og asparges",
+        "prices": [
+          "Alm 175,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "OKSEFILET",
+        "desc": "med dagens kartoffel bearnaisesauce eller gorgonzolasovs",
+        "prices": [
+          "Alm 175,00 kr."
+        ],
+        "varenr": "F7"
+      }
+    ],
+    "HJEMMELAVEDE BURGER": [
+      {
+        "name": "HAMBURGER",
+        "desc": "med pommes frites, ketchup og remoulade",
+        "prices": [
+          "Alm 110,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "KYLLINGEBURGER",
+        "desc": "med pommes frites, ketchup og remoulade",
+        "prices": [
+          "Alm 115,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "BACON/CHEESEBURGER",
+        "desc": "med pommes frites, ketchup og remoulade",
+        "prices": [
+          "Alm 120,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "CHEESEBURGER",
+        "desc": "med pommes frites, ketchup og remoulade",
+        "prices": [
+          "Alm 115,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "BARBECUEBURGER",
+        "desc": "med pommes frites, ketchup og remoulade",
+        "prices": [
+          "Alm 130,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "MEXICANSKBURGER",
+        "desc": "med pommes frites, ketchup og remoulade",
+        "prices": [
+          "Alm 130,00 kr."
+        ],
+        "varenr": "F7"
+      }
+    ],
+    "SALAT": [
+      {
+        "name": "LUXUX SALAT",
+        "desc": "Iceberg, ananas, tun, rejer, tomater, agurk, dressing og brød",
+        "prices": [
+          "Alm 90,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "CECARSALAT",
+        "desc": "Kylling og hjertesalat, cæsar dressing, parmesan og croutoner",
+        "prices": [
+          "Alm 95,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "TUNSALAT",
+        "desc": "Iceberg, tun, tomater, agurk, dressing, brød",
+        "prices": [
+          "Alm 80,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "GRÆSK SALAT",
+        "desc": "Icerberg, tomater, agurk, oliven, fetaost, dressing og brød",
+        "prices": [
+          "Alm 80,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "CECARSALAT",
+        "desc": "Rejer og hjertesalat, cæsar dressing, parmesan og croutoner",
+        "prices": [
+          "Alm 95,00 kr."
+        ],
+        "varenr": "F15"
+      }
+    ],
+    "POMMES FRITES": [
+      {
+        "name": "POMMES FRITES, LILLE BAKKE",
+        "desc": "",
+        "prices": [
+          "Alm 39,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "POMMES FRITES, STOR BAKKE",
+        "desc": "",
+        "prices": [
+          "Alm 49,00 kr."
+        ],
+        "varenr": "F3"
+      }
+    ],
+    "DRIKKEVARER": [
+      {
+        "name": "Coca cola",
+        "desc": "",
+        "prices": [
+          "0,25 25,00 kr.",
+          "1,5 45,00 kr."
+        ],
+        "varenr": "F14"
+      },
+      {
+        "name": "Coca cola Zero",
+        "desc": "",
+        "prices": [
+          "0,25 25,00 kr.",
+          "1,5 45,00 kr."
+        ],
+        "varenr": "F3"
+      },
+      {
+        "name": "Fanta",
+        "desc": "",
+        "prices": [
+          "0,25 25,00 kr.",
+          "1,5 45,00 kr."
+        ],
+        "varenr": "F6"
+      },
+      {
+        "name": "Sprite",
+        "desc": "",
+        "prices": [
+          "0,25 25,00 kr.",
+          "1,5 45,00 kr."
+        ],
+        "varenr": "F2"
+      },
+      {
+        "name": "Ice tea",
+        "desc": "",
+        "prices": [
+          "Flaske 30,00 kr."
+        ],
+        "varenr": "F15"
+      },
+      {
+        "name": "Cocio",
+        "desc": "",
+        "prices": [
+          "Flaske 25,00 kr."
+        ],
+        "varenr": "F7"
+      },
+      {
+        "name": "Juice",
+        "desc": "",
+        "prices": [
+          "Flaske 25,00 kr."
+        ],
+        "varenr": "F13"
+      },
+      {
+        "name": "FLASKE VAND",
+        "desc": "UDEN BRUS",
+        "prices": [
+          "0,5 20,00 kr."
+        ],
+        "varenr": "F10"
+      },
+      {
+        "name": "FLASKEVAND",
+        "desc": "MED BRUS",
+        "prices": [
+          "0,5 25,00 kr."
+        ],
+        "varenr": "F4"
+      },
+      {
+        "name": "Husets hvidvin",
+        "desc": "",
+        "prices": [
+          "Flaske 175,00 kr."
+        ],
+        "varenr": "F9"
+      },
+      {
+        "name": "Husets rødvin",
+        "desc": "",
+        "prices": [
+          "Flaske 175,00 kr."
+        ],
+        "varenr": "F8"
+      }
+    ]
+  }
+}

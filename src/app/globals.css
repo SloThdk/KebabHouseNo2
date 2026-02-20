@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* Prevent horizontal scroll on all screens */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Pointer cursor on all interactive elements */
+button,
+[role="button"],
+a[href],
+select,
+input[type="checkbox"],
+input[type="radio"],
+label:has(input),
+summary {
+  cursor: pointer;
+}
