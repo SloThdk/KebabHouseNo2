@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { ArrowLeft, Plus, Check, Search, X } from 'lucide-react'
 import { useCart } from '@/contexts/CartContext'
@@ -14,6 +14,13 @@ export default function MenuSection() {
   const [addedItems, setAddedItems] = useState<Set<string>>(new Set())
   const [extrasModalItem, setExtrasModalItem] = useState<{item: any, category: string, priceIndex: number} | null>(null)
   const { addItem } = useCart()
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    if (selectedCategory !== null) {
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [selectedCategory])
 
   const normalize = (s: string) =>
     s.toLowerCase()
@@ -97,7 +104,7 @@ export default function MenuSection() {
     : null
 
   return (
-    <section id="menu" className="py-16 bg-stone-950">
+    <section id="menu" ref={sectionRef} className="py-16 bg-stone-950">
       <div className="container mx-auto px-4">
 
         {/* Header */}
@@ -228,7 +235,7 @@ export default function MenuSection() {
                     <div className="min-w-0 flex-1">
                       <h4 className="text-base sm:text-lg font-semibold text-white leading-tight">{item.name}</h4>
                       {(item as any).varenr && (
-                        <span className="text-xs text-stone-500 mt-0.5 block">#{(item as any).varenr}</span>
+                        <span className="text-xs text-stone-500 mt-0.5 block">{(item as any).varenr}</span>
                       )}
                       {item.desc && (
                         <p className="text-stone-400 text-sm mt-2 leading-relaxed">{item.desc}</p>
