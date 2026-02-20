@@ -45,6 +45,17 @@ export default function Navigation() {
     { label: 'Min konto', href: 'https://pizzakebabhouse.dk/?module=Sunu&page=customer&do=login_mobile&user_id=343' },
   ]
 
+  const handleSmoothScroll = (e: React.MouseEvent, href: string) => {
+    if (href === '/#menu') {
+      if (pathname === '/') {
+        e.preventDefault()
+        document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        setIsOpen(false)
+      }
+      // else: let Next.js navigate to homepage, hash will handle scroll after load
+    }
+  }
+
   return (
     <>
       {/* Top info bar — desktop only */}
@@ -81,22 +92,24 @@ export default function Navigation() {
         isScrolled ? 'bg-stone-900/95 backdrop-blur-md shadow-lg' : 'bg-stone-900'
       }`}>
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 sm:h-20">
+          <div className="flex items-center justify-between h-24 sm:h-28">
 
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 shrink-0">
-              <Image
-                src="/logo.png"
-                alt="Kebab House no.2"
-                width={68}
-                height={68}
-                className="rounded-md"
-              />
-              <div className="hidden sm:block">
-                <p className="text-white font-bold text-lg leading-tight">Kebab House no.2</p>
-                <p className="text-amber-500/70 text-xs">Nørre Nebel</p>
-              </div>
-              <div className="hidden md:flex items-center gap-2 ml-4">
+            <div className="flex items-center gap-3 shrink-0">
+              <Link href="/" className="flex items-center gap-3">
+                <Image
+                  src="/logo.png"
+                  alt="Kebab House no.2"
+                  width={120}
+                  height={120}
+                  className="rounded-md"
+                />
+                <div className="hidden sm:block">
+                  <p className="text-white font-bold text-lg leading-tight">Kebab House no.2</p>
+                  <p className="text-amber-500/70 text-xs">Nørre Nebel</p>
+                </div>
+              </Link>
+              <div className="hidden md:flex items-center gap-2 ml-4 cursor-default">
                 <div className="bg-stone-800 border border-stone-700 rounded-lg px-3 py-1 text-center">
                   <div className="text-[10px] text-stone-400 uppercase tracking-wider">Afhentning</div>
                   <div className="text-sm text-amber-500 font-semibold">12:00–21:00</div>
@@ -106,7 +119,7 @@ export default function Navigation() {
                   <div className="text-sm text-red-500 font-semibold">Lukket</div>
                 </div>
               </div>
-            </Link>
+            </div>
 
             {/* Desktop links */}
             <div className="hidden lg:flex items-center gap-1">
@@ -119,6 +132,7 @@ export default function Navigation() {
                     key={link.label}
                     href={link.href}
                     {...extra}
+                    onClick={(e: React.MouseEvent) => handleSmoothScroll(e, link.href)}
                     className="text-stone-300 hover:text-amber-500 hover:bg-stone-800 px-3 py-2 rounded transition text-sm font-medium uppercase tracking-wide"
                   >
                     {link.label}
@@ -166,7 +180,7 @@ export default function Navigation() {
             onClick={() => setIsOpen(false)}
           />
           {/* Menu panel */}
-          <div className="lg:hidden fixed top-16 sm:top-20 left-0 right-0 z-50 bg-stone-900 border-b border-stone-700 shadow-2xl overflow-y-auto max-h-[calc(100dvh-4rem)]">
+          <div className="lg:hidden fixed top-24 sm:top-28 left-0 right-0 z-50 bg-stone-900 border-b border-stone-700 shadow-2xl overflow-y-auto max-h-[calc(100dvh-6rem)]">
             <div className="container mx-auto px-4 py-2 pb-8">
               {navLinks.map((link) => {
                 const isExternal = link.href.startsWith('http')
@@ -177,7 +191,7 @@ export default function Navigation() {
                     key={link.label}
                     href={link.href}
                     {...extra}
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e: React.MouseEvent) => { handleSmoothScroll(e, link.href); setIsOpen(false) }}
                     className="flex items-center px-3 py-3.5 text-stone-200 hover:text-amber-500 hover:bg-stone-800 rounded-lg transition font-medium border-b border-stone-800 last:border-0"
                   >
                     {link.label}
