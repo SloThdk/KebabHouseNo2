@@ -55,11 +55,11 @@ export default function MenuSection() {
         extras,
         removedIncluded,
       })
-      setAddedItems(prev => new Set(prev).add(`${category}-${item.name}-${priceIndex}`))
+      setAddedItems(prev => new Set(prev).add(`${category}-${(item as any).varenr || item.name}-${priceIndex}`))
       setTimeout(() => {
         setAddedItems(prev => {
           const next = new Set(prev)
-          next.delete(`${category}-${item.name}-${priceIndex}`)
+          next.delete(`${category}-${(item as any).varenr || item.name}-${priceIndex}`)
           return next
         })
       }, 1000)
@@ -148,9 +148,9 @@ export default function MenuSection() {
                           <span className="text-amber-500 font-bold text-sm whitespace-nowrap">{price}</span>
                           <button
                             onClick={() => handleAddToCart(category, item, priceIndex)}
-                            className={`${addedItems.has(`${category}-${item.name}-${priceIndex}`) ? 'bg-green-500 scale-125' : 'bg-amber-500 hover:bg-amber-600 hover:scale-110'} text-stone-900 p-1.5 rounded-full transition-all duration-300`}
+                            className={`${addedItems.has(`${category}-${(item as any).varenr || item.name}-${priceIndex}`) ? 'bg-green-500 scale-125' : 'bg-amber-500 hover:bg-amber-600 hover:scale-110'} text-stone-900 p-1.5 rounded-full transition-all duration-300`}
                           >
-                            {addedItems.has(`${category}-${item.name}-${priceIndex}`) ? <Check size={15} /> : <Plus size={15} />}
+                            {addedItems.has(`${category}-${(item as any).varenr || item.name}-${priceIndex}`) ? <Check size={15} /> : <Plus size={15} />}
                           </button>
                         </div>
                       ))}
@@ -247,10 +247,10 @@ export default function MenuSection() {
                           <span className="text-amber-500 font-bold text-sm sm:text-base whitespace-nowrap">{price}</span>
                           <button
                             onClick={() => handleAddToCart(selectedCategory, item, priceIndex)}
-                            className={`${addedItems.has(`${selectedCategory}-${item.name}-${priceIndex}`) ? 'bg-green-500 scale-125' : 'bg-amber-500 hover:bg-amber-600 hover:scale-110'} text-stone-900 p-2 rounded-full transition-all duration-300 cursor-pointer`}
+                            className={`${addedItems.has(`${selectedCategory}-${(item as any).varenr || item.name}-${priceIndex}`) ? 'bg-green-500 scale-125' : 'bg-amber-500 hover:bg-amber-600 hover:scale-110'} text-stone-900 p-2 rounded-full transition-all duration-300 cursor-pointer`}
                             aria-label={`Tilføj ${item.name} til kurv`}
                           >
-                            {addedItems.has(`${selectedCategory}-${item.name}-${priceIndex}`) ? <Check size={16} /> : <Plus size={16} />}
+                            {addedItems.has(`${selectedCategory}-${(item as any).varenr || item.name}-${priceIndex}`) ? <Check size={16} /> : <Plus size={16} />}
                           </button>
                         </div>
                       ))}
